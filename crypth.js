@@ -23,7 +23,6 @@ function udkumodal() {
 let cc = {}
 let kicks = []
 function check() {
-  requestAnimationFrame(check)
   let us = document.querySelector("#app > div > div > div.arts__hostRegularBody___Yp72x-camelCase.styles__body___2EH9y-camelCase > div.styles__left___1r0kE-camelCase.styles__invisibleScrollbar___1TG0f-camelCase");
   let pl = hack().stateNode.state.players;
   for (var ku of kicks) {
@@ -62,4 +61,4 @@ function mode() {
   return Object.keys(hack().stateNode.state.players[0]).filter(a=>{if("number"==typeof hack().stateNode.state.players[0][a])return!0})[0]
 }
 
-check()
+setInterval(check,1000)
