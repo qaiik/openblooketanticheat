@@ -29,9 +29,9 @@ function check() {
   for (var ku of kicks) {
   //var because it is accessible in the second scope
     for (var u of Array.from(document.querySelector("#app > div > div > div.arts__hostRegularBody___Yp72x-camelCase.styles__body___2EH9y-camelCase").children[0].children)) {
-        let name = Object.values(u)[1].children[1]._owner.stateNode.state.data[0].name;
-        if (name === ku) {
-            u.click()
+        let name = u.innerText.split("\n")[2]
+        if (name == ku) {
+          u.click()
         }
     }
   }
@@ -45,6 +45,10 @@ function check() {
     
     if(Math.abs(cur) > pre*3 && pre!=0) {
       //current is more than three times previous if previous != 0, fails = buddy bot, 40 crypto on first few.
+      kicks.push(u.name)
+    } 
+    
+    if (pre == 0 && Math.abs(cur) > 50) {
       kicks.push(u.name)
     }
     
